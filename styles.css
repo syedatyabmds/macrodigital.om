@@ -488,11 +488,12 @@ svg { display: block; }
 .footer-top nav a:hover, .footer-top p a:hover { color: var(--accent); }
 .footer-top p { text-align: right; color: var(--muted); }
 .footer-top p a { color: var(--ink); }
-.wordmark { margin: clamp(1rem, 3vw, 3rem) 0 0.5rem; }
+/* Decorative only: its glyph boxes overflow the tight line-height and would otherwise swallow clicks on the footer base below */
+.wordmark { margin: clamp(1rem, 3vw, 3rem) 0 0.5rem; pointer-events: none; }
 .wordmark-track { display: flex; align-items: center; width: max-content; animation: slide 30s linear infinite; }
 .wordmark span { font-size: clamp(6rem, 24vw, 26rem); font-weight: 600; letter-spacing: -0.075em; line-height: 0.82; white-space: nowrap; padding-bottom: 0.06em; }
 .wordmark i { flex: none; width: clamp(3rem, 12vw, 13rem); aspect-ratio: 1; margin: 0 clamp(1.5rem, 5vw, 6rem); border-radius: 22%; background: var(--accent); }
-.footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; padding: 0 var(--pad); }
+.footer-base { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; padding: 0 var(--pad); }
 .footer-base .tag { background: var(--paper-2); color: var(--ink); }
 .footer-base .tag-link { background: var(--ink); color: var(--paper); transition: background 0.3s ease, color 0.3s ease; }
 .footer-base .tag-link:hover { background: var(--accent); color: var(--ink); }
