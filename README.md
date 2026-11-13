@@ -15,11 +15,14 @@ edit it by hand, edit here and deploy.
 ├── styles.css
 ├── script.js
 ├── assets/
-│   ├── brand/         # logo, favicons (favicon-32.png, favicon-64.png, apple-touch-icon.png)
-│   ├── images/        # site imagery
-│   └── vendor/        # vendored font (Plus Jakarta Sans); no other third-party code
+│   ├── brand/         # favicon.svg (logo mark)
+│   ├── fonts/         # Geist + Geist Mono (SIL OFL, vendored)
+│   └── images/        # site imagery
 └── .github/workflows/ # deploy workflow
 ```
+
+The site has no build step and no external requests. Open `index.html` directly
+in a browser to preview it offline.
 
 ## Deploying
 
