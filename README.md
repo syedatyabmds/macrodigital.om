@@ -48,31 +48,42 @@ as muscataimarkets.om):
 | `DEPLOY_HOST`        | Server hostname / IP                                         |
 | `DEPLOY_USER`        | Deploy user                                                  |
 
-### One-time server setup
+### One-time server setup (done)
+
+The site is already wired up on the server. For reference, the steps were:
 
 ```bash
-# 1. Create the live folder
-sudo mkdir -p /opt/websites/sites/macrodigital.om
+# 1. Create the live folder (owned by the deploy user, group-writable)
+sudo install -d -o deploy -g websites -m 2775 /opt/websites/sites/macrodigital.om
 
-# 2. Add a site block to the Caddyfile, e.g.
-#    macrodigital.om, www.macrodigital.om {
-#        root * /srv/sites/macrodigital.om   # path as seen inside the Caddy container
+# 2. Add this block to /opt/websites/Caddyfile
+#    macrodigital.om {
+#        root * /srv/macrodigital.om      # /opt/websites/sites is mounted at /srv
+#        encode gzip zstd
 #        file_server
-#        encode zstd gzip
 #    }
-#    (mirror whatever the muscataimarkets.om block uses)
 
-# 3. Reload Caddy
+# 3. Validate and reload Caddy (zero downtime)
+sudo docker exec caddy caddy validate --config /etc/caddy/Caddyfile
+cd /opt/websites && sudo docker compose exec caddy caddy reload --config /etc/caddy/Caddyfile
 ```
 
-Point the `macrodigital.om` (and `www`) DNS A records at the Lightsail static IP
-so Caddy can obtain the TLS certificate.
+`macrodigital.om` resolves to the Lightsail static IP `35.157.209.65`, so Caddy
+obtains the TLS certificate automatically. The apex domain only — there is no
+`www` record.
 
-Manual deploy (from the server), if ever needed:
+Manual deploy (fallback), if ever needed:
 
 ```bash
-rsync -az --delete /home/ubuntu/work_area/macrodigital.om/ \
-  /opt/websites/sites/macrodigital.om/
+# Re-run the pipeline on the current main:
+gh workflow run deploy.yml -R syedatyabmds/macrodigital.om
+
+# Or clone fresh and rsync directly:
+git clone https://github.com/syedatyabmds/macrodigital.om /tmp/macrodigital.om
+rsync -az --delete \
+  -e "ssh -i /home/ubuntu/.ssh/gh_deploy_key -o IdentitiesOnly=yes" \
+  --exclude '.git/' --exclude '.github/' --exclude 'README.md' --exclude '.gitignore' \
+  /tmp/macrodigital.om/ deploy@35.157.209.65:macrodigital.om/
 ```
 
 ## Contributing
