@@ -374,8 +374,10 @@ svg { display: block; }
 .art-growth { background: var(--paper); }
 .art-growth svg { position: absolute; inset: 12% 0 0; width: 100%; height: 88%; }
 .art-growth .area { fill: var(--paper-2); }
-.art-growth .curve { fill: none; stroke: var(--ink); stroke-width: 3; vector-effect: non-scaling-stroke; stroke-dasharray: 1; animation: draw 1.6s var(--ease) both; }
-@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.art-growth .curve { fill: none; stroke: var(--ink); stroke-width: 3; vector-effect: non-scaling-stroke; }
+/* The line is revealed by wiping the whole chart; a stroke-dash draw breaks with non-scaling strokes. */
+.js .panel.is-active .art-growth svg { animation: sweep 1.6s var(--ease) both; }
+@keyframes sweep { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 .art-growth .pin { position: absolute; right: 1.2rem; top: 15%; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0.6rem rgba(255, 90, 31, 0.2); animation: ping 2s ease-out infinite; }
 @keyframes ping { to { box-shadow: 0 0 0 1.6rem rgba(255, 90, 31, 0); } }
 
