@@ -17,7 +17,7 @@ edit it by hand, edit here and deploy.
 ├── assets/
 │   ├── brand/         # logo, favicons (favicon-32.png, favicon-64.png, apple-touch-icon.png)
 │   ├── images/        # site imagery
-│   └── vendor/        # third-party css/js/fonts (Tailwind, AOS, Font Awesome, Plus Jakarta Sans)
+│   └── vendor/        # vendored font (Plus Jakarta Sans); no other third-party code
 └── .github/workflows/ # deploy workflow
 ```
 
