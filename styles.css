@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Macro Digital — theme (starter)
+   Placeholder palette: swap the variables below for the Macro Digital brand
+   colours once the brand guidelines are available.
+   ========================================================================== */
+
+:root {
+  --bg:        #0b1120;
+  --bg-2:      #0f172a;
+  --surface:   #111c33;
+  --accent:    #38bdf8;
+  --accent-2:  #818cf8;
+  --border:    rgba(255, 255, 255, 0.10);
+  --grad:      linear-gradient(120deg, var(--accent), var(--accent-2));
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 50%);
+  background-attachment: fixed;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+/* Header */
+.site-header {
+  background: rgba(11, 17, 32, 0.6);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Mobile nav */
+header nav.mobile-open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  gap: 1.25rem;
+  background: rgba(11, 17, 32, 0.96);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Type */
+.display {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.display-sm {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.thin { font-weight: 300; }
+
+.accent {
+  font-style: normal;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+/* Hero glow */
+.aurora {
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 120%;
+  background:
+    radial-gradient(ellipse 50% 40% at 30% 30%, rgba(56, 189, 248, 0.18), transparent 70%),
+    radial-gradient(ellipse 45% 40% at 70% 40%, rgba(129, 140, 248, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--grad);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+}
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: #fff;
+}
+
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.06); }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateY(-3px);
+}
+
+.card .accent { -webkit-text-fill-color: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .card { transition: none; }
+}

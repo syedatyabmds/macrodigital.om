@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Macro Digital — Muscat, Oman</title>
+  <meta name="description" content="Macro Digital — digital solutions from Muscat, Sultanate of Oman." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Macro Digital" />
+  <meta property="og:description" content="Digital solutions from Muscat, Sultanate of Oman." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://macrodigital.om/" />
+  <meta property="og:locale" content="en_OM" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Brand icons: drop favicon-32.png / favicon-64.png / apple-touch-icon.png into assets/brand/ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/brand/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <!-- Tailwind CSS (vendored) -->
+  <script src="assets/vendor/tailwind.js"></script>
+  <!-- Typography: Plus Jakarta Sans, vendored locally -->
+  <link rel="stylesheet" href="assets/vendor/plus-jakarta-sans.css">
+  <!-- AOS scroll animations -->
+  <link rel="stylesheet" href="assets/vendor/aos.css">
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="assets/vendor/fontawesome.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-white antialiased">
+
+  <!-- NAV -->
+  <header class="site-header fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-4 flex items-center justify-between backdrop-blur-md">
+    <a href="#" class="brand-logo" aria-label="Macro Digital home">Macro<span class="accent">Digital</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+      <a href="#services" class="hover:text-white transition">Services</a>
+      <a href="#about" class="hover:text-white transition">About</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
+    </nav>
+    <button class="menu-btn md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero relative pt-40 pb-24 px-6 text-center overflow-hidden">
+      <div class="aurora" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <span class="eyebrow" data-aos="fade-up">COMING SOON</span>
+        <h1 class="display mt-6" data-aos="fade-up" data-aos-delay="100">
+          <span class="thin">A new website for</span> <em class="accent">Macro Digital</em>
+        </h1>
+        <p class="mt-6 max-w-2xl mx-auto text-white/60 text-lg" data-aos="fade-up" data-aos-delay="200">
+          We're building something new. In the meantime, get in touch — we'd love to hear from you.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="#contact" class="btn btn-primary">Contact Us <i class="fa-solid fa-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (placeholder) -->
+    <section id="services" class="px-6 md:px-12 py-16 max-w-6xl mx-auto">
+      <span class="eyebrow">SERVICES</span>
+      <h2 class="display-sm mt-3"><span class="thin">What</span> we do</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="card" data-aos="fade-up">
+          <i class="fa-solid fa-code text-2xl accent"></i>
+          <h3 class="mt-4 text-xl font-semibold">Service one</h3>
+          <p class="mt-2 text-white/60">Short description of this service.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-bullhorn text-2xl accent"></i>
+          <h3 class="mt-4 text-xl font-semibold">Service two</h3>
+          <p class="mt-2 text-white/60">Short description of this service.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-chart-line text-2xl accent"></i>
+          <h3 class="mt-4 text-xl font-semibold">Service three</h3>
+          <p class="mt-2 text-white/60">Short description of this service.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (placeholder) -->
+    <section id="about" class="px-6 md:px-12 py-16 max-w-4xl mx-auto">
+      <span class="eyebrow">ABOUT</span>
+      <h2 class="display-sm mt-3"><span class="thin">About</span> Macro Digital</h2>
+      <p class="mt-6 text-white/60 text-lg">A short introduction to the company goes here.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="px-6 md:px-12 py-16 max-w-4xl mx-auto text-center">
+      <span class="eyebrow">CONTACT</span>
+      <h2 class="display-sm mt-3"><span class="thin">Let's</span> talk</h2>
+      <p class="mt-6 text-white/60 text-lg">
+        <a class="accent hover:underline" href="mailto:info@macrodigital.om">info@macrodigital.om</a>
+      </p>
+      <p class="mt-2 text-white/40">Muscat, Sultanate of Oman</p>
+    </section>
+  </main>
+
+  <footer class="px-6 md:px-12 py-10 text-center text-sm text-white/40 border-t border-white/10">
+    &copy; <span id="year"></span> Macro Digital. All rights reserved.
+  </footer>
+
+  <script src="assets/vendor/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
